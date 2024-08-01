@@ -14,21 +14,24 @@ const { title } = Astro.props;
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <SEO
         title={title}
         description="Discover all my social media accounts. Follow me on various platforms and stay up to date."
         twitter={{
             creator: "@mindulace",
-            site: "@mindulace",
             card: "summary_large_image",
         }}
     />
 </head>
-<body>
-    <Navbar />
-    <slot />
+<body itemtype="https://schema.org/ProfilePage" itemscope>
+    <meta itemprop="dateCreated" content="2024-08-01T00:00:00+02:00" />
+    <meta itemprop="dateModified" content="2024-08-01T00:00:00+02:00" />
+    <div itemprop="mainEntity" itemtype="https://schema.org/Person" itemscope>
+        <Navbar />
+        <slot />
+    </div>
     <style is:global>
         img {
             content-visibility: auto;
