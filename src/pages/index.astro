@@ -2,24 +2,31 @@
 import Container from "@components/Container.astro";
 import Layout from "@layouts/Layout.astro";
 import Link from "@components/ui/Link.astro";
+import { contentfulClient  } from "lib/contentful";
+import type { EntryFieldTypes } from "contentful";
+
+interface SocialMedia {
+    contentTypeId: "socialMedia",
+    fields: {
+        name: EntryFieldTypes.Text
+        url: EntryFieldTypes.Text,
+    }
+}
+
+const entries = await contentfulClient.getEntries<SocialMedia>({
+  content_type: "socialMedia",
+});
 ---
 
 <Layout title="mindulace.social">
     <Container class="h-screen">
         <div class="h-screen flex items-center">
             <div class="flex justify-center flex-wrap flex-grow">
-                <Link href="https://github.com/mindulace" style="muted" class="m-2" itemprop="url">
-                    github
-                </Link>
-                <Link href="https://instagram.com/mindulace/" style="muted" class="m-2" itemprop="sameAs">
-                    instagram
-                </Link>
-                <Link href="https://twitter.com/mindulace" style="muted" class="m-2" itemprop="sameAs">
-                    twitter
-                </Link>
-                <Link href="https://instagram.com/dot.mind/" style="muted" class="m-2" itemprop="sameAs">
-                    instagram (creative)
-                </Link>
+                {entries.items.map((item) => (
+                    <Link href={item.fields.url} style="muted" class="m-2" itemprop="url">
+                        {item.fields.name}
+                    </Link>
+                ))}
             </div>
         </div>
     </Container>
