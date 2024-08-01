@@ -4,31 +4,33 @@ import Link from "@components/ui/Link.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 ---
 
-<Container>
-    <header class="flex flex-col lg:flex-row justify-between items-center my-5">
-        <Astronav>
-            <div class="flex w-full lg:w-auto items-center justify-between">
-                <a href="/" class="text-lg">
-                    <span class="hidden" itemprop="name">Hendrik</span>
-                    <span class="font-bold text-slate-800" itemprop="alternateName">mindulace</span><span
-                    class="text-slate-500">.social</span>
-                </a>
-                <div class="block lg:hidden">
-                    <MenuIcon class="w-4 h-4 text-gray-800" />
+<div class="fixed w-screen">
+    <Container>
+        <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+            <Astronav>
+                <div class="flex w-full lg:w-auto items-center justify-between">
+                    <a href="/" class="text-lg">
+                        <span class="hidden" itemprop="name">Hendrik</span>
+                        <span class="font-bold text-slate-800" itemprop="alternateName">mindulace</span><span
+                        class="text-slate-500">.social</span>
+                    </a>
+                    <div class="block lg:hidden">
+                        <MenuIcon class="w-4 h-4 text-gray-800" />
+                    </div>
+                </div>
+                <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+                    <div class="lg:hidden flex items-center mt-3 gap-4">
+                        <Link href="https://mindu.cloud" size="md" block>mindu.cloud</Link>
+                        <Link href="https://quentitiv.com" size="md" block>quentitiv.com</Link>
+                    </div>
+                </MenuItems>
+            </Astronav>
+            <div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <Link href="https://mindu.cloud" target="_blank" block>mindu.cloud</Link>
+                    <Link href="https://quentitiv.com" target="_blank" block>quentitiv.com</Link>
                 </div>
             </div>
-            <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-                <div class="lg:hidden flex items-center mt-3 gap-4">
-                    <Link href="https://mindu.cloud" size="md" block>mindu.cloud</Link>
-                    <Link href="https://quentitiv.com" size="md" block>quentitiv.com</Link>
-                </div>
-            </MenuItems>
-        </Astronav>
-        <div>
-            <div class="hidden lg:flex items-center gap-4">
-                <Link href="https://mindu.cloud" target="_blank" block>mindu.cloud</Link>
-                <Link href="https://quentitiv.com" target="_blank" block>quentitiv.com</Link>
-            </div>
-        </div>
-    </header>
-</Container>
+        </header>
+    </Container>
+</div>
