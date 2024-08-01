@@ -8,10 +8,18 @@ import Link from "@components/ui/Link.astro";
     <Container class="h-screen">
         <div class="h-screen flex items-center">
             <div class="flex justify-center flex-wrap flex-grow">
-                <Link href="https://github.com/mindulace" style="muted" class="m-2">github</Link>
-                <Link href="https://instagram.com/mindulace/" style="muted" class="m-2">instagram</Link>
-                <Link href="https://twitter.com/mindulace" style="muted" class="m-2">twitter</Link>
-                <Link href="https://instagram.com/dot.mind/" style="muted" class="m-2">instagram (creative)</Link>
+                <Link href="https://github.com/mindulace" style="muted" class="m-2" itemprop="url">
+                    github
+                </Link>
+                <Link href="https://instagram.com/mindulace/" style="muted" class="m-2" itemprop="sameAs">
+                    instagram
+                </Link>
+                <Link href="https://twitter.com/mindulace" style="muted" class="m-2" itemprop="sameAs">
+                    twitter
+                </Link>
+                <Link href="https://instagram.com/dot.mind/" style="muted" class="m-2" itemprop="sameAs">
+                    instagram (creative)
+                </Link>
             </div>
         </div>
     </Container>
