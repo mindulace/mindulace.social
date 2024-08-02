@@ -2,11 +2,12 @@ import { createDirectus, rest } from '@directus/sdk';
 import type { RequestTransformer } from '@directus/sdk';
 
 type SocialMedia = {
-    url: string
+    url: string,
+    name: string
 };
 
 type Schema = {
-    socialMedias: SocialMedia[]
+    socialMedia: SocialMedia[]
 };
 
 const requestTransformer: RequestTransformer = (options) => {
